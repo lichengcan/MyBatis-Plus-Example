@@ -6,8 +6,14 @@ import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import com.gitee.sunchenbin.mybatis.actable.annotation.Table;
+import com.gitee.sunchenbin.mybatis.actable.annotation.TableCharset;
+import com.gitee.sunchenbin.mybatis.actable.annotation.TableComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.TableEngine;
+import com.gitee.sunchenbin.mybatis.actable.constants.MySqlCharsetConstant;
+import com.gitee.sunchenbin.mybatis.actable.constants.MySqlEngineConstant;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 /**
@@ -22,6 +28,14 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("shop_category")
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "category_entity")
+@TableComment("category")
+@TableCharset(MySqlCharsetConstant.UTF16)
+@TableEngine(MySqlEngineConstant.InnoDB)
 public class CategoryEntity extends Model<CategoryEntity> {
 
     private static final long serialVersionUID = 1L;

@@ -1,11 +1,11 @@
 package com.fengwenyi.mybatisplusexample.repository;
 
-import com.fengwenyi.mybatisplusexample.entity.CategoryEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fengwenyi.mybatisplusexample.entity.CategoryEntity;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author Erwin Feng

@@ -8,9 +8,11 @@ import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
-import com.fengwenyi.mybatisplusexample.entity.enums.GoodsFlagEnum;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import com.fengwenyi.mybatisplusexample.enums.GoodsFlagEnum;
+import com.gitee.sunchenbin.mybatis.actable.annotation.*;
+import com.gitee.sunchenbin.mybatis.actable.constants.MySqlCharsetConstant;
+import com.gitee.sunchenbin.mybatis.actable.constants.MySqlEngineConstant;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 /**
@@ -25,6 +27,14 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("shop_goods")
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "goods_entity")
+@TableComment("goods_entity")
+@TableCharset(MySqlCharsetConstant.UTF16)
+@TableEngine(MySqlEngineConstant.InnoDB)
 public class GoodsEntity extends Model<GoodsEntity> {
 
     private static final long serialVersionUID = 1L;
@@ -62,8 +72,8 @@ public class GoodsEntity extends Model<GoodsEntity> {
     /**
      * 上下架。0：下架；1：上架。默认0。
      */
-    @TableField("flag")
-    private GoodsFlagEnum flag;
+//    @TableField("flag")
+//    private GoodsFlagEnum flag;
 
     /**
      * 逻辑删除状态。0：正常；1：删除。默认0。

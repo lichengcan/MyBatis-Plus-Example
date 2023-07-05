@@ -3,14 +3,13 @@ package com.fengwenyi.mybatisplusexample;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.fengwenyi.mybatisplusexample.entity.CategoryEntity;
 import com.fengwenyi.mybatisplusexample.entity.GoodsEntity;
-import com.fengwenyi.mybatisplusexample.entity.enums.GoodsFlagEnum;
+import com.fengwenyi.mybatisplusexample.enums.GoodsFlagEnum;
 import com.fengwenyi.mybatisplusexample.repository.MPCategoryRepository;
 import com.fengwenyi.mybatisplusexample.repository.MPGoodsRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -42,7 +41,6 @@ public class GoodsRepositoryTests extends MybatisPlusExampleApplicationTests {
                 .setName("平板电脑")
                 .setPrice(new BigDecimal("4699.00"))
                 .setStockNum(10000L)
-                .setFlag(GoodsFlagEnum.UP)
                 .setCategoryId(categoryEntity.getId())
                 .setCreateBy("admin")
                 ;
@@ -54,7 +52,6 @@ public class GoodsRepositoryTests extends MybatisPlusExampleApplicationTests {
         List<GoodsEntity> goodsEntityList = mpGoodsRepository.list();
         for (GoodsEntity goodsEntity : goodsEntityList) {
             log.info(goodsEntity.toString());
-            log.info(goodsEntity.getFlag().getValue() + "");
         }
     }
 

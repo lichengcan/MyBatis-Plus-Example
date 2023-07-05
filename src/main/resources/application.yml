@@ -1,17 +1,20 @@
-#app
 server:
-  port: 8080
-
+  port: 8081
 spring:
   application:
     name: mybatis-plus-example
-  profiles:
-    active: dev
+#  profiles:
+#    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://${mysql.host:localhost}:${mysql.port:3306}/testdb?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
 
 #mybatis
 mybatis-plus:
   # xml
-  mapper-locations: classpath:mapper/*Mapper.xml
+  mapper-locations: classpath:mapper/*Mapper.xml,classpath*:com/gitee/sunchenbin/mybatis/actable/mapping/*/*.xml
   # 实体扫描，多个package用逗号或者分号分隔
   type-aliases-package: com.fengwenyi.mybatisplusexample.entity
   # 扫描枚举类 # 支持统配符 * 或者 ; 分割
@@ -28,7 +31,17 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 logback:
   appName: mybatis-plus-example
   fileType: log
+#    自动建表
+actable:
+  table:
+    auto: update
+  model:
+    pack: com.fengwenyi.mybatisplusexample.entity
+  # 数据库类型
+  database:
+    type: mysql

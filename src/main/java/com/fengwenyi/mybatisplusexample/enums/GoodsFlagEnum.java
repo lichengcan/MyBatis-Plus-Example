@@ -1,4 +1,4 @@
-package com.fengwenyi.mybatisplusexample.entity.enums;
+package com.fengwenyi.mybatisplusexample.enums;
 
 import com.baomidou.mybatisplus.annotation.IEnum;
 import lombok.Getter;
