@@ -1,23 +1,18 @@
 package com.fengwenyi.mybatisplusexample.entity;
 
-import java.math.BigDecimal;
-
 import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-
-import java.time.LocalDateTime;
-import java.io.Serializable;
-
-import com.fengwenyi.mybatisplusexample.enums.GoodsFlagEnum;
-import com.gitee.sunchenbin.mybatis.actable.annotation.*;
-import com.gitee.sunchenbin.mybatis.actable.constants.MySqlCharsetConstant;
-import com.gitee.sunchenbin.mybatis.actable.constants.MySqlEngineConstant;
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author Erwin Feng
@@ -27,14 +22,6 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("shop_goods")
-
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(name = "goods_entity")
-@TableComment("goods_entity")
-@TableCharset(MySqlCharsetConstant.UTF16)
-@TableEngine(MySqlEngineConstant.InnoDB)
 public class GoodsEntity extends Model<GoodsEntity> {
 
     private static final long serialVersionUID = 1L;

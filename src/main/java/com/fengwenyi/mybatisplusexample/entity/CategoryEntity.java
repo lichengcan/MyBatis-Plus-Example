@@ -1,20 +1,15 @@
 package com.fengwenyi.mybatisplusexample.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
-import java.io.Serializable;
-
-import com.gitee.sunchenbin.mybatis.actable.annotation.Table;
-import com.gitee.sunchenbin.mybatis.actable.annotation.TableCharset;
-import com.gitee.sunchenbin.mybatis.actable.annotation.TableComment;
-import com.gitee.sunchenbin.mybatis.actable.annotation.TableEngine;
-import com.gitee.sunchenbin.mybatis.actable.constants.MySqlCharsetConstant;
-import com.gitee.sunchenbin.mybatis.actable.constants.MySqlEngineConstant;
-import lombok.*;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -28,14 +23,6 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("shop_category")
-
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(name = "category_entity")
-@TableComment("category")
-@TableCharset(MySqlCharsetConstant.UTF16)
-@TableEngine(MySqlEngineConstant.InnoDB)
 public class CategoryEntity extends Model<CategoryEntity> {
 
     private static final long serialVersionUID = 1L;

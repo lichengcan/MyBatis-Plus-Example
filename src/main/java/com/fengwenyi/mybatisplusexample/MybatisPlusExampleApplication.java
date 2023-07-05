@@ -5,8 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan({"com.gitee.sunchenbin.mybatis.actable.manager.*","com.fengwenyi.mybatisplusexample"})
-@MapperScan({"com.gitee.sunchenbin.mybatis.actable.dao.*","com.fengwenyi.mybatisplusexample.mapper.*"})
+@MapperScan({"com.fengwenyi.mybatisplusexample.mapper.*"})
 @SpringBootApplication
 public class MybatisPlusExampleApplication {
 

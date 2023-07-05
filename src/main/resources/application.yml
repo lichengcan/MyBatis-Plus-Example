@@ -36,12 +36,12 @@ mybatis-plus:
 logback:
   appName: mybatis-plus-example
   fileType: log
-#    自动建表
-actable:
-  table:
-    auto: update
-  model:
-    pack: com.fengwenyi.mybatisplusexample.entity
-  # 数据库类型
-  database:
-    type: mysql
+##    自动建表
+#actable:
+#  table:
+#    auto: update
+#  model:
+#    pack: com.fengwenyi.mybatisplusexample.entity
+#  # 数据库类型
+#  database:
+#    type: mysql
